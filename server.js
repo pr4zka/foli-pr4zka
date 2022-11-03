@@ -1,25 +1,34 @@
-import express from "express"
+import express from "express";
 const router = express.Router();
 import cors from "cors";
 import nodemailer from "nodemailer";
-import dotenv from 'dotenv'
-dotenv.config()
+import dotenv from "dotenv";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
+
+dotenv.config();
 
 // server used to send send emails
 const app = express();
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 
 
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
-app.listen(5000, () => console.log("Server Running"));
+app.use(express.static(join(__dirname,'./dist')));
+console.log(__dirname, '/dist')
 
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`server on port ${PORT}`));
 
 const contactEmail = nodemailer.createTransport({
-  service: 'gmail',
+  service: "gmail",
   auth: {
     user: process.env.USER,
-    pass: process.env.PASS
+    pass: process.env.PASS,
   },
 });
 
@@ -31,9 +40,9 @@ contactEmail.verify((error) => {
   }
 });
 
-router.get('/get', (req, res) => {
-  res.send('hola')
-})
+router.get("/get", (req, res) => {
+  res.send("hola");
+});
 
 router.post("/contact", (req, res) => {
   const name = req.body.firstName + req.body.lastName;

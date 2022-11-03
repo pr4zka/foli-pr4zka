@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start":"vite && nodemon server",
+    "start": "node server",
     "build": "vite build",
     "preview": "vite preview"
   },
