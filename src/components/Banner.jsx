@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import { useEffect, useState } from 'react'
 import 'animate.css'
 import TrackVisibility from 'react-on-screen';
-import back from '../assets/img/Ivan-developer.png'
+import back from '../assets/img/ivan-developer.png'
 
 
 export const Banner = () => {
