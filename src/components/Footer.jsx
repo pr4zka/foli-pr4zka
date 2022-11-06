@@ -31,6 +31,7 @@ export const Footer = () => {
               </a>
             </div>
             <p>Ivan Martinez</p>
+            <h2>ivanhakate1028@gmail.com</h2>
           </Col>
         </Row>
       </Container>

@@ -3,6 +3,8 @@ import Nav from 'react-bootstrap/Nav';
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from '../assets/img/color-sharp2.png'
 import projImg3 from '../assets/img/project-img3.png'
+import alkemy from '../assets/img/projects/alkemy2.png'
+import tzuzul from '../assets/img/projects/tzuzul.png'
 import TrackVisibility from 'react-on-screen';
 import 'animate.css'
 
@@ -10,14 +12,16 @@ import 'animate.css'
 export const Projects = () => {
     const projects = [
         {
-            title: "alkemy challegenge",
-            descriptiom: "reto de alkemy",
-            imageUrl: projImg3
+            title: "Alkemy Challegenge",
+            description: "Api para explorar el mundo disney, la cual permite conocer y modificar personajes",
+            url: "https://pr4zka-challenge-production.up.railway.app/api-docs/",
+            imageUrl: alkemy
         },
         {
-            title: "alkemy challegenge",
-            descriptiom: "reto de alkemy",
-            imageUrl: projImg3
+            title: "Agenda App",
+            descriptiom: "App para tener un agenda compartida con tu equipo de trabajo",
+            url: "https://agenda-app-production.up.railway.app/api-docs/",
+            imageUrl: tzuzul
         },
         {
             title: "alkemy challegenge",

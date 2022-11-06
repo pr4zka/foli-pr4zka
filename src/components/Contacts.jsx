@@ -72,7 +72,7 @@ export const Contact = () => {
                                 <Col>
                                     <textarea rows="6" value={formDetails.message} placeholder="type your message" onChange={((e) => onFormUpdate('message', e.target.value))}></textarea>
                                     <button type='submit'><span>{buttonText}</span></button>
-                                </Col>
+                                </Col>                            
                                 {
                                     status.message &&
                                     <Col>

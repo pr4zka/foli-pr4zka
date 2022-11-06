@@ -38,36 +38,36 @@ export const Skills = () => {
                 <Row>
                     <Col>
                         <div className='skill-bx'>
-                            <h2>skills</h2>
+                            <h2>Skills</h2>
                             <h3>Some of my skills</h3>
                             <Carousel responsive={responsive} infinite={true} className="skill=slider">
-                                    <div className='item'>
-                                        <img src={js} alt="Image" />
-                                    </div>
-                                    <div className='item'>
-                                        <img src={react} className="w-20" alt="Image" />
-                                    </div>
-                                    <div className='item'>
-                                        <img src={mysql} alt="Image" />
-                                    </div>
-                                    <div className='item mongo'>
-                                        <img src={mongo} alt="Image" />
-                                    </div>
-                                    <div className='item css'>
-                                        <img src={css} alt="Image" />
-                                    </div>
-                                    <div className='item sequelize'>
-                                        <img src={sequelize} alt="Image" />
-                                    </div>
-                                    <div className='item node'>
-                                        <img src={node} alt="Image" />
-                                    </div>
-                                    <div className='item swagger'>
-                                        <img src={swagger} alt="Image" />
-                                    </div>
-                                    <div className='item git'>
-                                        <img src={git} alt="Image" />
-                                    </div>
+                                <div className='item'>
+                                    <img src={js} alt="Image" />
+                                </div>
+                                <div className='item'>
+                                    <img src={react} className="w-20" alt="Image" />
+                                </div>
+                                <div className='item'>
+                                    <img src={mysql} alt="Image" />
+                                </div>
+                                <div className='item mongo'>
+                                    <img src={mongo} alt="Image" />
+                                </div>
+                                <div className='item css'>
+                                    <img src={css} alt="Image" />
+                                </div>
+                                <div className='item sequelize'>
+                                    <img src={sequelize} alt="Image" />
+                                </div>
+                                <div className='item node'>
+                                    <img src={node} alt="Image" />
+                                </div>
+                                <div className='item swagger'>
+                                    <img src={swagger} alt="Image" />
+                                </div>
+                                <div className='item git'>
+                                    <img src={git} alt="Image" />
+                                </div>
                             </Carousel>
                         </div>
                     </Col>
