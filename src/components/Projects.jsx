@@ -1,10 +1,13 @@
 import { Col, Container, Row, Tab } from "react-bootstrap"
 import Nav from 'react-bootstrap/Nav';
 import { ProjectCard } from "./ProjectCard";
+import { ProjectCard2 } from './ProjectCard2';
 import colorSharp2 from '../assets/img/color-sharp2.png'
-import projImg3 from '../assets/img/project-img3.png'
+import mern from '../assets/img/projects/mern.png'
 import alkemy from '../assets/img/projects/alkemy2.png'
 import tzuzul from '../assets/img/projects/tzuzul.png'
+import organizer from '../assets/img/projects/OrganizerApp.png'
+import taskCrud from '../assets/img/projects/task-crud.png'
 import TrackVisibility from 'react-on-screen';
 import 'animate.css'
 
@@ -15,21 +18,38 @@ export const Projects = () => {
             title: "Alkemy Challegenge",
             description: "Api para explorar el mundo disney, la cual permite conocer y modificar personajes",
             url: "https://pr4zka-challenge-production.up.railway.app/api-docs/",
+            code: "https://github.com/pr4zka/pr4zka-challenge",
             imageUrl: alkemy
         },
         {
             title: "Agenda App",
             description: "lorem asjkdjka asjdkajhskld ahsdhjas hjashdjkas jkashdjkas",
             url: "https://agenda-app-production.up.railway.app/api-docs/",
+            code: "https://github.com/pr4zka/agenda-app",
             imageUrl: tzuzul
         },
         {
-            title: "alkemy challegenge",
+            title: "MERN-STACK",
             description: "lorem asjkdjka asjdkajhskld ahsdhjas hjashdjkas jkashdjkas",
             url: "https://agenda-app-production.up.railway.app/api-docs/",
-            imageUrl: tzuzul
-        }
+            code: "https://github.com/pr4zka/mern-stack",
+            imageUrl: mern
+        },
 
+    ]
+    const projects2 = [
+        {
+            title: "Organizador de tareas",
+            description: "lorem asjkdjka asjdkajhskld ahsdhjas hjashdjkas jkashdjkas",
+            code: "https://github.com/pr4zka/organizerapp",
+            imageUrl: organizer
+        },
+        {
+            title: "Aplicacion de Tareas",
+            description: "lorem asjkdjka asjdkajhskld ahsdhjas hjashdjkas jkashdjkas",
+            code: "https://github.com/pr4zka/crud-react",
+            imageUrl: taskCrud
+        }
     ]
     return (
         <section className="project" id="projects">
@@ -67,8 +87,16 @@ export const Projects = () => {
                                         }
                                     </Row>
                                 </Tab.Pane>
-                                <Tab.Pane eventKey="Second" className="text-center">
-                                    In procces
+                                <Tab.Pane eventKey="second">
+                                    <Row>
+                                        {
+                                            projects2.map((project, index) => {
+                                                return (
+                                                    <ProjectCard2 key={index} {...project} />
+                                                )
+                                            })
+                                        }
+                                    </Row>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="third" className="text-center">
                                     In procces
