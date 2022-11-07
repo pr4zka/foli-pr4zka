@@ -55,7 +55,7 @@ export const Contact = () => {
                     </Col>
                     <Col md={6}>
                         <h2>Contact me</h2>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} className='form-s'>
                             <Row>
                                 <Col sm={6} className="px-1">
                                     <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
@@ -70,7 +70,7 @@ export const Contact = () => {
                                     <input type="text" value={formDetails.phone} placeholder="Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
                                 </Col>
                                 <Col>
-                                    <textarea rows="6" value={formDetails.message} placeholder="type your message" onChange={((e) => onFormUpdate('message', e.target.value))}></textarea>
+                                    <textarea rows="5" value={formDetails.message} placeholder="type your message" onChange={((e) => onFormUpdate('message', e.target.value))}></textarea>
                                     <button type='submit'><span>{buttonText}</span></button>
                                 </Col>                            
                                 {

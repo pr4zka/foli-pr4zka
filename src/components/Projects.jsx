@@ -19,14 +19,15 @@ export const Projects = () => {
         },
         {
             title: "Agenda App",
-            descriptiom: "App para tener un agenda compartida con tu equipo de trabajo",
+            description: "lorem asjkdjka asjdkajhskld ahsdhjas hjashdjkas jkashdjkas",
             url: "https://agenda-app-production.up.railway.app/api-docs/",
             imageUrl: tzuzul
         },
         {
             title: "alkemy challegenge",
-            descriptiom: "reto de alkemy",
-            imageUrl: projImg3
+            description: "lorem asjkdjka asjdkajhskld ahsdhjas hjashdjkas jkashdjkas",
+            url: "https://agenda-app-production.up.railway.app/api-docs/",
+            imageUrl: tzuzul
         }
 
     ]

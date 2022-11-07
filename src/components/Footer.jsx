@@ -30,8 +30,8 @@ export const Footer = () => {
                 <img src={git} alt="ig" />
               </a>
             </div>
-            <p>Ivan Martinez</p>
-            <h2>ivanhakate1028@gmail.com</h2>
+            <p></p>
+            <h2 className="ema">ivanhakate1028@gmail.com</h2>
           </Col>
         </Row>
       </Container>
