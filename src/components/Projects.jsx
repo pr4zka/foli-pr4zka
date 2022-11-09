@@ -31,7 +31,7 @@ export const Projects = () => {
         {
             title: "MERN-STACK",
             description: "CRUD con React",
-            url: "https://agenda-app-production.up.railway.app/api-docs/",
+            url: "https://mern-stack-production.up.railway.app/",
             code: "https://github.com/pr4zka/mern-stack",
             imageUrl: mern
         },
