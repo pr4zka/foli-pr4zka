@@ -23,30 +23,31 @@ export const Projects = () => {
         },
         {
             title: "Agenda App",
-            description: "lorem asjkdjka asjdkajhskld ahsdhjas hjashdjkas jkashdjkas",
+            description: "App para agendar tareas y participantes a la misma",
             url: "https://agenda-app-production.up.railway.app/api-docs/",
             code: "https://github.com/pr4zka/agenda-app",
             imageUrl: tzuzul
         },
         {
             title: "MERN-STACK",
-            description: "lorem asjkdjka asjdkajhskld ahsdhjas hjashdjkas jkashdjkas",
+            description: "CRUD con React",
             url: "https://agenda-app-production.up.railway.app/api-docs/",
             code: "https://github.com/pr4zka/mern-stack",
             imageUrl: mern
         },
 
     ]
+    
     const projects2 = [
         {
             title: "Organizador de tareas",
-            description: "lorem asjkdjka asjdkajhskld ahsdhjas hjashdjkas jkashdjkas",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, delectus.",
             code: "https://github.com/pr4zka/organizerapp",
             imageUrl: organizer
         },
         {
             title: "Aplicacion de Tareas",
-            description: "lorem asjkdjka asjdkajhskld ahsdhjas hjashdjkas jkashdjkas",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, delectus.",
             code: "https://github.com/pr4zka/crud-react",
             imageUrl: taskCrud
         }
