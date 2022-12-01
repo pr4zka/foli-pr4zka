@@ -2,9 +2,6 @@ import { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Dev from '../assets/img/Dev.svg'
 
-console.log(import.meta.env.PROD) // 123
-
-
 
 export const Contact = () => {
     const formInitialDetails = {
@@ -27,9 +24,8 @@ export const Contact = () => {
     }
 
  const API_URL = () => {
-  return process.env.API_URL; // will return API URL in .env file.
+  return import.meta.env.API_URL; // will return API URL in .env file.
 };
-console.log(API_URL)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
