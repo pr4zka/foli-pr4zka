@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Dev from '../assets/img/Dev.svg'
-
+import emailjs from 'emailjs-com'
+import { useRef } from 'react'
 
 export const Contact = () => {
     const formInitialDetails = {
@@ -23,30 +24,47 @@ export const Contact = () => {
         })
     }
 
- const API_URL = () => {
-  return import.meta.env.API_URL; // will return API URL in .env file.
-};
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     setButtonText("Sending...");
+    //     let response = await fetch(``, {
+    //         method: "POST",
+    //         headers: {
+    //             "Access-Control-Allow-Origin": "*",
+    //             "Content-Type": "application/json;charset=utf-8",
 
-    const handleSubmit = async (e) => {
+    //         },
+    //         body: JSON.stringify(formDetails),
+    //     })
+    //     setButtonText("Send");
+    //     let result = await response.json();
+    //     setFormDetails(formInitialDetails);
+    //     if (result.code == 200) {
+    //         setStatus({ succes: true, message: 'Message sent successfully' });
+    //     } else {
+    //         setStatus({ succes: false, message: 'Something went wrong, please try again later.' });
+    //     }
+    // }
+
+    const form = useRef()
+
+
+    const sendEmail = (e) => {
         e.preventDefault();
-        setButtonText("Sending...");
-        let response = await fetch(API_URL(), {
-            method: "POST",
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Content-Type": "application/json;charset=utf-8",
+        emailjs.sendForm(
+            import.meta.env.VITE_APP_YOUR_SERVICE_ID,
+            import.meta.env.VITE_APP_YOUR_TEMPLATE_ID,
+            form.current,
+            import.meta.env.VITE_APP_YOUR_PUBLIC_KEY,
 
-            },
-            body: JSON.stringify(formDetails),
+        ).then((result) => {
+            // setButtonText("sending")
+            if (result.text) {
+                setFormDetails(formInitialDetails);
+            }
+        }, (err) => {
+            console.log(err)
         })
-        setButtonText("Send");
-        let result = await response.json();
-        setFormDetails(formInitialDetails);
-        if (result.code == 200) {
-            setStatus({ succes: true, message: 'Message sent successfully' });
-        } else {
-            setStatus({ succes: false, message: 'Something went wrong, please try again later.' });
-        }
     }
 
     return (
@@ -58,24 +76,24 @@ export const Contact = () => {
                     </Col>
                     <Col md={6}>
                         <h2>Contact me</h2>
-                        <form onSubmit={handleSubmit} className='form-s'>
+                        <form ref={form} onSubmit={sendEmail} className='form-s' autoComplete='off'>
                             <Row>
                                 <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
+                                    <input type="text" name='firstName' value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.lastName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)} />
+                                    <input type="text" name='lastName' value={formDetails.lastName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)} />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.email} placeholder="Email" onChange={(e) => onFormUpdate('email', e.target.value)} />
+                                    <input type="email" name='email' value={formDetails.email} placeholder="Email" onChange={(e) => onFormUpdate('email', e.target.value)} />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.phone} placeholder="Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
+                                    <input type="text" name='phone' value={formDetails.phone} placeholder="Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
                                 </Col>
                                 <Col>
-                                    <textarea rows="5" value={formDetails.message} placeholder="type your message" onChange={((e) => onFormUpdate('message', e.target.value))}></textarea>
+                                    <textarea rows="5" name='message' value={formDetails.message} placeholder="type your message" onChange={((e) => onFormUpdate('message', e.target.value))}></textarea>
                                     <button type='submit'><span>{buttonText}</span></button>
-                                </Col>                            
+                                </Col>
                                 {
                                     status.message &&
                                     <Col>
