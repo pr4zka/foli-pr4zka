@@ -2,9 +2,11 @@ import { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Dev from '../assets/img/Dev.svg'
 
+console.log(import.meta.env.PROD) // 123
+
+
 
 export const Contact = () => {
-
     const formInitialDetails = {
         firstName: '',
         lastName: '',
@@ -24,10 +26,15 @@ export const Contact = () => {
         })
     }
 
+ const API_URL = () => {
+  return process.env.API_URL; // will return API URL in .env file.
+};
+console.log(API_URL)
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setButtonText("Sending...");
-        let response = await fetch(`http://localhost:${procces.env.PORT}/contact`, {
+        let response = await fetch(API_URL(), {
             method: "POST",
             headers: {
                 "Access-Control-Allow-Origin": "*",
