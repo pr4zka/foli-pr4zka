@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Dev from '../assets/img/Dev.svg'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
 import { useRef } from 'react'
 
 export const Contact = () => {
@@ -58,7 +58,6 @@ export const Contact = () => {
             import.meta.env.VITE_APP_YOUR_PUBLIC_KEY,
 
         ).then((result) => {
-            // setButtonText("sending")
             if (result.text) {
                 setFormDetails(formInitialDetails);
             }
