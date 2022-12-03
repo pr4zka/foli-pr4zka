@@ -8,6 +8,7 @@ import alkemy from '../assets/img/projects/alkemy2.png'
 import tzuzul from '../assets/img/projects/tzuzul.png'
 import organizer from '../assets/img/projects/OrganizerApp.png'
 import taskCrud from '../assets/img/projects/task-crud.png'
+import socialRed from '../assets/img/projects/social.png'
 import TrackVisibility from 'react-on-screen';
 import 'animate.css'
 
@@ -41,15 +42,21 @@ export const Projects = () => {
     const projects2 = [
         {
             title: "Organizador de tareas",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, delectus.",
+            description: "Aplicacion pra organizar tareas pendientes",
             code: "https://github.com/pr4zka/organizerapp",
             imageUrl: organizer
         },
         {
             title: "Aplicacion de Tareas",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, delectus.",
+            description: "CRUD con React",
             code: "https://github.com/pr4zka/crud-react",
             imageUrl: taskCrud
+        },
+        {
+            title: "Social Network",
+            description: "Aplicacion hecha en React con base de datos en MongoDb",
+            code: "https://github.com/pr4zka/social-media",
+            imageUrl: socialRed
         }
     ]
     return (
